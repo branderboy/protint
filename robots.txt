@@ -1,6 +1,10 @@
 User-agent: *
 Allow: /
 
+Disallow: /deploy.php
+Disallow: /deploy-config.php
+Disallow: /deploy-config.example.php
+Disallow: /deploy.log
 Disallow: /CLAUDE.md
 
 Sitemap: https://www.protintdmv.com/sitemap.xml

@@ -1,7 +1,9 @@
 # Pro Tint DMV (protintdmv.com)
 
 Static HTML site for Pro Tint DMV, the window tinting arm of the Pro Wash
-family. Sister repo: `branderboy/prowash-html` (shares the stylesheet,
+family. Deploys to HostGator on every push to `main` via `deploy.php`
+(GitHub push webhook, same setup as prowash-html; secrets live in the
+gitignored `deploy-config.php` on the server). Sister repo: `branderboy/prowash-html` (shares the stylesheet,
 nav.js, reveal.js and the Acuity booking account).
 
 ## Site structure (5 core elements)
