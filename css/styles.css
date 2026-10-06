@@ -245,10 +245,20 @@ header {
     padding: 12px 22px;
 }
 @media (min-width: 1024px) {
+    .nav-container {
+        justify-content: flex-start;
+        gap: clamp(42px, 5vw, 76px);
+    }
+
+    .logo-area {
+        flex: 0 0 auto;
+    }
+
     .nav-links {
         display: flex;
         gap: 24px;
         align-items: center;
+        margin-left: auto;
     }
 }
 .nav-item {
