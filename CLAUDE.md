@@ -20,6 +20,8 @@ nav.js, reveal.js and the Acuity booking account).
 - No middle dots as separators. Use commas or pipes.
 - Phone everywhere: (301) 307-1414, tel links `tel:3013071414`.
 - Hero tagline: "Get Your Pro Tint On". Do not use the Pro Wash tagline.
+- Homepage hero photo is `images/protint-hero-home.jpg` (the black
+  Cadillac). Never touch a hero unless asked.
 - Internal link additions are plain text links, not buttons.
 - "Business Hours", never "Facility Hours".
 
@@ -36,7 +38,10 @@ nav.js, reveal.js and the Acuity booking account).
 - Film: Global Window Films dyed-carbon standard, 3M on request, ceramic
   upgrade. Lifetime warranty on every install. Free wash included.
 - Legal: Maryland 35% VLT all windows on cars, 35% front doors on
-  trucks/SUVs. DC: cars 70% front / 50% rear, SUVs 55% front / 35% rear.
+  trucks/SUVs (Transp. Art. 22-406). The DC law guide (Code 50-2207.02:
+  70% front / 50% rear; minivans 55% / 35%) is topical content only.
+  NEVER say the business is in DC or serves DC as a location. Law
+  guides carry a "checked on" date; update it when re-verified.
 - Booking: Acuity owner 14099514, category filter
   `appointmentType=category:Window+Tinting`. Per-location calendars are in `book.html`.
 
