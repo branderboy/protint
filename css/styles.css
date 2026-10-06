@@ -531,6 +531,86 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
     .hero-actions { justify-content: flex-start; }
 }
 
+
+/* Mobile hero stability and layout */
+@media (max-width: 767px) {
+    .hero {
+        padding: 64px 0 72px !important;
+        text-align: left;
+        background-position: 62% center !important;
+        min-height: auto;
+    }
+
+    .hero .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 0.78rem;
+        line-height: 1.35;
+        letter-spacing: 1.4px;
+        margin-bottom: 12px;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(2.35rem, 11vw, 3.35rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        margin-bottom: 18px;
+        text-wrap: balance;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+    }
+
+    .hero-divider {
+        margin: 0 0 18px 0;
+        width: 64px;
+    }
+
+    .hero p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Keep the first-screen hero fixed in place instead of sliding on load. */
+    .js-reveal .hero .reveal:not(.active),
+    .hero .reveal,
+    .hero .reveal.active {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Subpage Hero */
 .subpage-hero {
     position: relative;
