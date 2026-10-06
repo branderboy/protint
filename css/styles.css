@@ -736,13 +736,13 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
 .loc-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 20px;
+    gap: 14px;
 }
 @media (min-width: 600px) {
-    .loc-grid { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+    .loc-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; }
 }
 @media (min-width: 1024px) {
-    .loc-grid { grid-template-columns: repeat(5, 1fr); gap: 15px; }
+    .loc-grid { grid-template-columns: repeat(5, 1fr); gap: 10px; }
 }
 .loc-card {
     background: var(--white);
