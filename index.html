@@ -215,6 +215,7 @@
                     </div>
                 </div>
                 <a href="pricing.html" class="nav-item">Pricing</a>
+                <a href="gallery.html" class="nav-item">Gallery</a>
                 <a href="faq.html" class="nav-item">FAQ</a>
                 <a href="about.html" class="nav-item">About</a>
                 <a href="contact.html" class="nav-item">Contact</a>
@@ -403,6 +404,36 @@
         </div>
     </section>
 
+    
+    <section class="section-padding bg-light">
+        <div class="container">
+            
+            <div class="section-header reveal">
+                <span class="section-subtitle">Our Work</span>
+                <h2 class="section-title">FRESH OUT OF <span>THE BAY</span></h2>
+                <div class="title-divider"></div>
+                <p style="margin-top:15px; color:var(--text-muted); font-size:1.05rem; max-width:720px; margin-left:auto; margin-right:auto;">Real installs from Pro Tint shops.</p>
+            </div>
+            <div class="gs-grid">
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/corvette-c8-white.jpg" alt="Window tint install: Chevrolet Corvette C8" loading="lazy" decoding="async" width="480" height="480"><span>Chevrolet Corvette C8</span></a>
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/bentley-continental-gt-black.jpg" alt="Window tint install: Bentley Continental GT" loading="lazy" decoding="async" width="480" height="480"><span>Bentley Continental GT</span></a>
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/porsche-macan-purple.jpg" alt="Window tint install: Porsche Macan" loading="lazy" decoding="async" width="480" height="480"><span>Porsche Macan</span></a>
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/ford-raptor-white.jpg" alt="Window tint install: Ford F-150 Raptor" loading="lazy" decoding="async" width="480" height="480"><span>Ford F-150 Raptor</span></a>
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/nissan-armada-black-rear.jpg" alt="Window tint install: Nissan Armada, rear" loading="lazy" decoding="async" width="480" height="480"><span>Nissan Armada, rear</span></a>
+                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/tesla-model-y-black.jpg" alt="Window tint install: Tesla Model Y" loading="lazy" decoding="async" width="480" height="480"><span>Tesla Model Y</span></a>
+            </div>
+            <p style="text-align:center; margin-top:22px;"><a href="gallery.html" class="btn btn-dark btn-sm">See the Full Gallery</a></p>
+        </div>
+    </section>
+    <style>
+        .gs-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:12px; }
+        .gs-tile { position:relative; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:8px; border:1px solid var(--gray-mid); background:var(--white); }
+        .gs-tile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
+        .gs-tile:hover img { transform:scale(1.04); }
+        .gs-tile span { position:absolute; left:0; right:0; bottom:0; padding:6px 10px; background:linear-gradient(to top, rgba(5,16,36,.85), rgba(5,16,36,0)); color:#fff; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.78rem; }
+        @media (max-width:600px) { .gs-grid { grid-template-columns:repeat(2, 1fr); } }
+    </style>
+
     <section class="section-padding">
         <div class="container">
             <div class="tint-grid">
@@ -535,6 +566,7 @@
                         <li><a href="services/ceramic-window-tint.html">Ceramic Tint Upgrade</a></li>
                         <li><a href="services/tint-removal.html">Tint Removal</a></li>
                         <li><a href="pricing.html">Pricing &amp; Packages</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
                         <li><a href="warranty.html">Lifetime Warranty</a></li>
                         <li><a href="book.html">Book Online</a></li>
                     </ul>
