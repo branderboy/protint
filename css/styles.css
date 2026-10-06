@@ -754,6 +754,7 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 .loc-card:hover {
     transform: translateY(-8px);
@@ -1930,11 +1931,14 @@ hr.section-divider {
 
 .loc-card-img {
     display: block;
-    width: calc(100% + 40px);
+    width: 100%;
+    max-width: 100%;
     height: 170px;
-    margin: -20px -20px 18px;
+    margin: 0 0 18px;
     object-fit: cover;
-    border-radius: 8px 8px 0 0;
+    object-position: center;
+    border-radius: 8px;
+    flex: 0 0 auto;
 }
 @media (max-width: 600px) {
     .loc-card-img {
