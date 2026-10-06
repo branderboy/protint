@@ -245,10 +245,20 @@ header {
     padding: 12px 22px;
 }
 @media (min-width: 1024px) {
+    .nav-container {
+        justify-content: flex-start;
+        gap: clamp(42px, 5vw, 76px);
+    }
+
+    .logo-area {
+        flex: 0 0 auto;
+    }
+
     .nav-links {
         display: flex;
         gap: 24px;
         align-items: center;
+        margin-left: auto;
     }
 }
 .nav-item {
@@ -464,7 +474,11 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
     margin: 0 auto;
 }
 @media (min-width: 768px) {
-    .hero-content { margin: 0; }
+    .hero-content {
+        margin: 0;
+        width: min(620px, 48vw);
+        max-width: 48vw;
+    }
 }
 .hero-subtitle {
     display: inline-block;
@@ -478,12 +492,15 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
     position: relative;
 }
 .hero h1 {
-    font-size: clamp(2.8rem, 6vw, 5rem);
+    font-size: clamp(2.8rem, 4.5vw, 4.35rem);
+    line-height: 1.04;
     color: var(--white);
     margin-bottom: 20px;
     text-transform: uppercase;
     letter-spacing: -1px;
     text-shadow: 0 4px 30px rgba(0,0,0,0.4);
+    overflow-wrap: normal;
+    word-break: normal;
 }
 .hero h1 span {
     color: var(--white);
@@ -522,6 +539,86 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
 }
 @media (min-width: 768px) {
     .hero-actions { justify-content: flex-start; }
+}
+
+
+/* Mobile hero stability and layout */
+@media (max-width: 767px) {
+    .hero {
+        padding: 64px 0 72px !important;
+        text-align: left;
+        background-position: 62% center !important;
+        min-height: auto;
+    }
+
+    .hero .container {
+        width: 100%;
+        max-width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    .hero-subtitle {
+        font-size: 0.78rem;
+        line-height: 1.35;
+        letter-spacing: 1.4px;
+        margin-bottom: 12px;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        width: 100%;
+        max-width: 100%;
+        font-size: clamp(2.35rem, 11vw, 3.35rem);
+        line-height: 0.98;
+        letter-spacing: -0.035em;
+        margin-bottom: 18px;
+        text-wrap: balance;
+        overflow-wrap: normal;
+        word-break: normal;
+        hyphens: none;
+    }
+
+    .hero-divider {
+        margin: 0 0 18px 0;
+        width: 64px;
+    }
+
+    .hero p {
+        width: 100%;
+        max-width: 100%;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin-bottom: 24px;
+    }
+
+    .hero-actions {
+        align-items: stretch;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    /* Keep the first-screen hero fixed in place instead of sliding on load. */
+    .js-reveal .hero .reveal:not(.active),
+    .hero .reveal,
+    .hero .reveal.active {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
 }
 
 /* Subpage Hero */
@@ -1787,3 +1884,45 @@ hr.section-divider {
 .review-stars svg { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 .review-author .review-name, .review-author .review-label { display: block; }
 .review-author .review-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; }
+
+
+/* Dedicated mobile hero layout */
+@media (max-width: 767px) {
+    .hero {
+        min-height: 0;
+        display: block;
+        background-size: cover !important;
+        background-position: 68% center !important;
+    }
+
+    .hero::after {
+        background:
+            linear-gradient(90deg, rgba(5,16,36,.96) 0%, rgba(5,16,36,.90) 46%, rgba(5,16,36,.58) 72%, rgba(5,16,36,.28) 100%),
+            linear-gradient(180deg, rgba(5,16,36,.08) 0%, rgba(5,16,36,.30) 100%);
+    }
+
+    .hero-content {
+        max-width: 22rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.25rem, 10.6vw, 3.15rem);
+        line-height: .96;
+        letter-spacing: -0.04em;
+        max-width: 9.5ch;
+    }
+
+    .hero p {
+        max-width: 32rem;
+    }
+
+    .hero-actions {
+        max-width: 22rem;
+    }
+
+    .hero-actions .btn {
+        min-height: 54px;
+        padding: 15px 22px;
+        line-height: 1.15;
+    }
+}
