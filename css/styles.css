@@ -1984,3 +1984,16 @@ hr.section-divider {
 #pricing .section-subtitle {
     color: var(--red);
 }
+
+
+#pricing .pricing-card-truck .service-header {
+    background: #FFFFFF;
+    color: var(--dark-blue);
+    border-bottom: 1px solid var(--gray-mid);
+}
+#pricing .pricing-card-truck .service-header h3 {
+    color: var(--dark-blue);
+}
+#pricing .pricing-card-truck .service-header .pkg-num {
+    color: #6B7F95;
+}
