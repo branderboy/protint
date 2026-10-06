@@ -1784,3 +1784,4 @@ hr.section-divider {
 .loc-card h4 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 8px; text-transform: uppercase; }
 .check-list { list-style: none; padding-left: 0; }
 .map-embed { height: 450px; }
+.review-stars svg { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
