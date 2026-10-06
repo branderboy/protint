@@ -1777,9 +1777,9 @@ hr.section-divider {
 /* =============================================
    Pro Tint DMV additions
    ============================================= */
-.logo-area img { height: 64px; width: auto; max-width: 240px; }
-.footer-logo img { height: 56px; width: auto; max-width: 220px; }
-@media (max-width: 600px) { .logo-area img { height: 48px; } }
+.logo-area img { height: 110px; width: auto; }
+.footer-logo img { height: 120px; width: auto; }
+@media (max-width: 600px) { .logo-area img { height: 72px; } }
 .why-us-grid .why-box p { margin-top: 4px; }
 .loc-card h4 { font-size: 1.1rem; color: var(--dark-blue); margin-bottom: 8px; text-transform: uppercase; }
 .check-list { list-style: none; padding-left: 0; }
