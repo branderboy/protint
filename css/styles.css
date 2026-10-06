@@ -1785,3 +1785,5 @@ hr.section-divider {
 .check-list { list-style: none; padding-left: 0; }
 .map-embed { height: 450px; }
 .review-stars svg { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
+.review-author .review-name, .review-author .review-label { display: block; }
+.review-author .review-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; }
