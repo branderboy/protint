@@ -1050,8 +1050,8 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
 
 /* Featured Card */
 .service-card.featured {
-    border-color: var(--red);
-    box-shadow: 0 10px 40px rgba(179, 58, 52, 0.25);
+    border-color: #B8C8DA;
+    box-shadow: 0 10px 36px rgba(10, 30, 61, 0.14);
 }
 @media (min-width: 1024px) {
     .service-card.featured {
@@ -1061,10 +1061,13 @@ html:not(.js) .nav-dropdown:focus-within .dropdown-menu { display: block; }
     .service-card.featured:hover { transform: scale(1.08) translateY(-8px); }
 }
 .service-card.featured .service-header {
-    background: var(--red);
+    background: #173A63;
 }
-.service-card.featured .service-header .pkg-num { color: rgba(255,255,255,0.7); }
-.service-card.featured .service-price-hero .big-price { color: var(--red); }
+.service-card.featured .service-header .pkg-num { color: rgba(255,255,255,0.72); }
+.service-card.featured .service-price-hero {
+    background: #E8F1FA;
+}
+.service-card.featured .service-price-hero .big-price { color: #173A63; }
 .featured-label {
     background: var(--red);
     color: var(--white);
@@ -1949,4 +1952,35 @@ hr.section-divider {
 
 .loc-card-img-capitol {
     object-position: center 32%;
+}
+
+
+/* Homepage pricing color balance */
+#pricing .pricing-card-car {
+    border-color: #D7DEE7;
+}
+#pricing .pricing-card-car .service-header {
+    background: var(--dark-blue);
+}
+#pricing .pricing-card-car .service-price-hero {
+    background: #F7F9FB;
+}
+#pricing .pricing-card-car .service-price-hero .big-price {
+    color: var(--dark-blue);
+}
+#pricing .pricing-card-truck .service-body {
+    background: #FFFFFF;
+}
+#pricing .price-item .price-value {
+    color: var(--dark-blue);
+}
+#pricing .price-item .price-value[style*="var(--red)"] {
+    color: #4F6F91 !important;
+}
+#pricing .btn-red {
+    background: var(--red);
+}
+#pricing .section-title span,
+#pricing .section-subtitle {
+    color: var(--red);
 }
