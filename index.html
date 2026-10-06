@@ -404,10 +404,10 @@
     </section>
 
     
-    <section class="section-padding bg-light">
+    <section class="bg-light" style="padding:42px 0 58px;">
         <div class="container">
             
-            <div class="section-header reveal">
+            <div class="section-header reveal" style="margin-bottom:24px;">
                 <span class="section-subtitle">Our Work</span>
                 <h2 class="section-title">FRESH OUT OF <span>PROTINT SHOP</span></h2>
                 <div class="title-divider"></div>
@@ -419,17 +419,17 @@
                 <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/porsche-macan-purple.jpg" alt="Window tint install: Porsche Macan" loading="lazy" decoding="async" width="480" height="480"><span>Porsche Macan</span></a>
                 <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/ford-raptor-white.jpg" alt="Window tint install: Ford F-150 Raptor" loading="lazy" decoding="async" width="480" height="480"><span>Ford F-150 Raptor</span></a>
                 <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/nissan-armada-black-rear.jpg" alt="Window tint install: Nissan Armada, rear" loading="lazy" decoding="async" width="480" height="480"><span>Nissan Armada, rear</span></a>
-                <a class="gs-tile reveal" href="gallery.html"><img src="images/gallery/thumbs/tesla-model-y-black.jpg" alt="Window tint install: Tesla Model Y" loading="lazy" decoding="async" width="480" height="480"><span>Tesla Model Y</span></a>
             </div>
             <p style="text-align:center; margin-top:22px;"><a href="gallery.html" class="btn btn-dark btn-sm">See the Full Gallery</a></p>
         </div>
     </section>
     <style>
-        .gs-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(180px, 1fr)); gap:12px; }
+        .gs-grid { display:grid; grid-template-columns:repeat(5, minmax(0, 1fr)); gap:12px; }
         .gs-tile { position:relative; display:block; aspect-ratio:1/1; overflow:hidden; border-radius:8px; border:1px solid var(--gray-mid); background:var(--white); }
         .gs-tile img { width:100%; height:100%; object-fit:cover; display:block; transition:transform .4s ease; }
         .gs-tile:hover img { transform:scale(1.04); }
         .gs-tile span { position:absolute; left:0; right:0; bottom:0; padding:6px 10px; background:linear-gradient(to top, rgba(5,16,36,.85), rgba(5,16,36,0)); color:#fff; font-family:'Montserrat',sans-serif; font-weight:700; font-size:.78rem; }
+        @media (max-width:900px) { .gs-grid { grid-template-columns:repeat(3, 1fr); } }
         @media (max-width:600px) { .gs-grid { grid-template-columns:repeat(2, 1fr); } }
     </style>
 
