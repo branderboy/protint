@@ -1945,3 +1945,8 @@ hr.section-divider {
         height: 190px;
     }
 }
+
+
+.loc-card-img-capitol {
+    object-position: center 32%;
+}
