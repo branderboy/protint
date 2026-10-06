@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Disallow: /CLAUDE.md
+
+Sitemap: https://www.protintdmv.com/sitemap.xml

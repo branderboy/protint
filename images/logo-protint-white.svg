@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 90" width="320" height="90" role="img" aria-label="Pro Tint DMV">
+  <style>.a{font-family:Montserrat,Arial,Helvetica,sans-serif;font-weight:900;} .b{font-family:Montserrat,Arial,Helvetica,sans-serif;font-weight:700;letter-spacing:4px;}</style>
+  <rect x="2" y="8" width="10" height="74" rx="2" fill="#FFD976"/>
+  <text x="24" y="52" class="a" font-size="44" fill="#FFFFFF">PRO <tspan fill="#FFD976">TINT</tspan></text>
+  <text x="26" y="76" class="b" font-size="15" fill="#FFFFFF">DMV | WINDOW TINTING</text>
+</svg>
