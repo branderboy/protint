@@ -1874,3 +1874,45 @@ hr.section-divider {
 .review-stars svg { width: 18px; height: 18px; fill: currentColor; display: inline-block; vertical-align: middle; }
 .review-author .review-name, .review-author .review-label { display: block; }
 .review-author .review-label { font-size: 0.82rem; color: var(--text-muted); font-weight: 600; }
+
+
+/* Dedicated mobile hero layout */
+@media (max-width: 767px) {
+    .hero {
+        min-height: 0;
+        display: block;
+        background-size: cover !important;
+        background-position: 68% center !important;
+    }
+
+    .hero::after {
+        background:
+            linear-gradient(90deg, rgba(5,16,36,.96) 0%, rgba(5,16,36,.90) 46%, rgba(5,16,36,.58) 72%, rgba(5,16,36,.28) 100%),
+            linear-gradient(180deg, rgba(5,16,36,.08) 0%, rgba(5,16,36,.30) 100%);
+    }
+
+    .hero-content {
+        max-width: 22rem;
+    }
+
+    .hero h1 {
+        font-size: clamp(2.25rem, 10.6vw, 3.15rem);
+        line-height: .96;
+        letter-spacing: -0.04em;
+        max-width: 9.5ch;
+    }
+
+    .hero p {
+        max-width: 32rem;
+    }
+
+    .hero-actions {
+        max-width: 22rem;
+    }
+
+    .hero-actions .btn {
+        min-height: 54px;
+        padding: 15px 22px;
+        line-height: 1.15;
+    }
+}
