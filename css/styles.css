@@ -1997,3 +1997,12 @@ hr.section-divider {
 #pricing .pricing-card-truck .service-header .pkg-num {
     color: #6B7F95;
 }
+
+/* Truck (featured) pricing card: white header on every page, not just the homepage */
+.service-card.featured .service-header {
+    background: #FFFFFF;
+    color: var(--dark-blue);
+    border-bottom: 1px solid var(--gray-mid);
+}
+.service-card.featured .service-header h3 { color: var(--dark-blue); }
+.service-card.featured .service-header .pkg-num { color: #6B7F95; }
