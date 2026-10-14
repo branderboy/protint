@@ -56,9 +56,10 @@ nav.js, reveal.js and the Acuity booking account).
   Acuity link in a new tab; a plain text link under it goes to the shop page.
 - `locations/<shop>.html`: embeds that shop's calendar in a section with
   `id="book"`; the page's non-hero Book Online buttons jump to `#book`.
-- Shop links: Capitol Heights `&location=29+Hampton+Park+Blvd+Capitol+Heights+MD+20743-3816+US`,
-  Clinton `&location=+6311+C+Coventry+Way+Clinton+MD+20735+US`,
-  Bowie `&calendarID=1838107`, Upper Marlboro `&calendarID=4794913`.
+- Shop links (Pro Tint calendars, checked in Acuity 2026-10-14): Capitol
+  Heights `&calendarID=2200795`, Bowie `&calendarID=1838105`, Clinton
+  `&calendarID=10104513`, Upper Marlboro `&calendarID=10132290`. The
+  Pro Wash calendars (1406436, 1838107, 1424862) have no tinting service.
 
 ## Deploy records
 
