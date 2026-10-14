@@ -70,6 +70,9 @@ nav.js, reveal.js and the Acuity booking account).
 - GitHub default branch is still `claude/awesome-mayer-1tyhpo`; deploys
   only follow `main`. Keep both in sync, or switch the default to `main`
   in repo Settings.
+- `rejected: signature mismatch` in `deploy.log` means the webhook Secret
+  does not match `webhook_secret` (paste it without quotes). Redeliver
+  resends the old signature, so test a fix with a new push.
 - Before 2026-10-14 there was no webhook, so pushes did not reach the
   live site.
 
