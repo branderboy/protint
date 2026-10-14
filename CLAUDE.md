@@ -45,7 +45,33 @@ nav.js, reveal.js and the Acuity booking account).
   NEVER say the business is in DC or serves DC as a location. Law
   guides carry a "checked on" date; update it when re-verified.
 - Booking: Acuity owner 14099514, category filter
-  `appointmentType=category:Window+Tinting`. Per-location calendars are in `book.html`.
+  `appointmentType=category:Window+Tinting`.
+
+## Booking structure (decided 2026-10-14)
+
+- Each shop has its own booking. Never one shared calendar, never a
+  location picker on our page (customers ended up choosing a location
+  twice: once on our page, again in Acuity).
+- `book.html`: one card per shop. The red button opens that shop's own
+  Acuity link in a new tab; a plain text link under it goes to the shop page.
+- `locations/<shop>.html`: embeds that shop's calendar in a section with
+  `id="book"`; the page's non-hero Book Online buttons jump to `#book`.
+- Shop links: Capitol Heights `&location=29+Hampton+Park+Blvd+Capitol+Heights+MD+20743-3816+US`,
+  Clinton `&location=+6311+C+Coventry+Way+Clinton+MD+20735+US`,
+  Bowie `&calendarID=1838107`, Upper Marlboro `&calendarID=4794913`.
+
+## Deploy records
+
+- Repo push webhook (added 2026-10-14) posts to
+  `https://protintdmv.com/deploy.php`, JSON, push event only.
+- Server config: `/home/prowash1/protint/deploy-config.php` (branch
+  `main`). Log: `deploy.log` next to it. Never commit secrets.
+- Manual redeploy: `https://protintdmv.com/deploy.php?manual=1&token=<manual_token or webhook_secret>`.
+- GitHub default branch is still `claude/awesome-mayer-1tyhpo`; deploys
+  only follow `main`. Keep both in sync, or switch the default to `main`
+  in repo Settings.
+- Before 2026-10-14 there was no webhook, so pushes did not reach the
+  live site.
 
 ## Before pushing
 
