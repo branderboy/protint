@@ -27,6 +27,12 @@ nav.js, reveal.js and the Acuity booking account).
 - Internal link additions are plain text links, not buttons.
 - "Business Hours", never "Facility Hours".
 
+## Booking guard
+
+- Read `BOOKING.md` before touching `book.html`, any location page, a
+  `#book` section or an Acuity link, and run its checks before pushing.
+  Broken booking means lost customers.
+
 ## Key facts
 
 - HQ: Capitol Heights, 29 Hampton Park Blvd. Four shops: Capitol Heights,
