@@ -1,0 +1,105 @@
+name: Submit URLs for indexing
+
+# Runs after each push to main (once the HostGator deploy is live), daily,
+# and by hand. State and log live on the indexing-state branch, which
+# deploy.php ignores, so they never reach the website and never redeploy it.
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: "37 10 * * *"
+  workflow_dispatch:
+    inputs:
+      target:
+        description: Where to submit
+        type: choice
+        options: [all, indexnow, bing]
+        default: all
+      dry_run:
+        description: Dry run (send nothing)
+        type: boolean
+        default: false
+      force:
+        description: Resubmit every URL
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: indexing
+  cancel-in-progress: false
+
+jobs:
+  submit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check out state branch
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git ls-remote --exit-code --heads origin indexing-state >/dev/null; then
+            git fetch origin indexing-state
+            git worktree add -B indexing-state .state origin/indexing-state
+          else
+            git worktree add --orphan -b indexing-state .state
+          fi
+
+      # deploy.php reports nothing back to GitHub, so wait until a file from
+      # this push is served byte for byte before reading the live sitemap.
+      - name: Wait for deploy to go live
+        if: github.event_name == 'push'
+        env:
+          BEFORE: ${{ github.event.before }}
+        run: |
+          origin=$(grep -im1 '^Sitemap:' robots.txt | awk '{print $2}' | sed -E 's#^(https?://[^/]+).*#\1#')
+          ua="Mozilla/5.0 (compatible; SiteIndexingTool/1.0; +https://www.indexnow.org/)"
+          file=""
+          if ! [[ "$BEFORE" =~ ^0+$ ]]; then
+            for f in $(git diff --name-only "$BEFORE" HEAD); do
+              [ -f "$f" ] || continue
+              git check-attr export-ignore -- "$f" | grep -q ': set$' && continue
+              case "$f" in deploy.php|.github/*) continue ;; esac
+              file="$f"; break
+            done
+          fi
+          if [ -z "$file" ]; then
+            echo "No deployed file to compare, waiting 90s"; sleep 90; exit 0
+          fi
+          want=$(sha256sum "$file" | cut -d' ' -f1)
+          echo "Waiting for $origin/$file"
+          for i in $(seq 1 30); do
+            got=$(curl -fsSL -A "$ua" "$origin/$file?cb=$GITHUB_RUN_ID-$i" | sha256sum | cut -d' ' -f1 || true)
+            if [ "$got" = "$want" ]; then echo "Live after $((i * 20))s"; exit 0; fi
+            sleep 20
+          done
+          echo "::warning::Deploy not confirmed after 10 minutes, continuing. Every URL is still checked for a 200 before submitting."
+
+      - name: Submit
+        env:
+          BING_WEBMASTER_API_KEY: ${{ secrets.BING_WEBMASTER_API_KEY }}
+          BEFORE: ${{ github.event.before }}
+        run: |
+          args=(--state-dir .state --target "${{ inputs.target || 'all' }}")
+          [ "${{ inputs.dry_run }}" = "true" ] && args+=(--dry-run)
+          [ "${{ inputs.force }}" = "true" ] && args+=(--force)
+          if [ "${{ github.event_name }}" = "push" ] && ! [[ "$BEFORE" =~ ^0+$ ]]; then
+            args+=(--changed-since "$BEFORE")
+          fi
+          python3 indexing/submit.py "${args[@]}"
+
+      - name: Save state and log
+        if: always()
+        run: |
+          cd .state
+          git add -A
+          if git diff --cached --quiet; then echo "No state changes"; exit 0; fi
+          git commit -m "Indexing run ${{ github.run_id }} (${{ github.event_name }})"
+          git push origin indexing-state

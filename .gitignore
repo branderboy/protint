@@ -1,3 +1,6 @@
 deploy-config.php
 deploy.log
 .htaccess
+
+# indexing tool: local state (the workflow keeps its own on the indexing-state branch)
+.indexing/
