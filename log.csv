@@ -3,3 +3,5 @@ timestamp,target,url_count,status_code,error
 2026-10-21T19:04:27Z,bing,0,400,"quota check failed: {""ErrorCode"": 3, ""Message"": ""ERROR!!! InvalidApiKey""}"
 2026-10-21T19:09:35Z,bing,0,400,"quota check failed: {""ErrorCode"": 3, ""Message"": ""ERROR!!! InvalidApiKey""}"
 2026-10-21T19:12:02Z,bing,0,400,"quota check failed: {""ErrorCode"": 3, ""Message"": ""ERROR!!! InvalidApiKey""}"
+2026-10-21T19:13:45Z,indexnow,0,nothing-to-do,
+2026-10-21T19:13:45Z,bing,0,400,"quota check failed: {""ErrorCode"": 3, ""Message"": ""ERROR!!! InvalidApiKey""}"
